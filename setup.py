@@ -1,11 +1,43 @@
 import os
 from setuptools import setup
 
-version = '0.1'
+version = '0.0.1'
 name = 'django-subcommand'
 short_description = ''
 long_description = """\
+``Add sub command to A Django manage command.``
 
+Description
+===========
+
+Requirements
+============
+* django
+* django_compressor
+* inflection
+* django-generate-scaffold (optional)
+
+Features
+========
+
+
+Setup
+=====
+
+
+Installation
+~~~~~~~~~~~~
+
+
+History
+========
+0.x (2012-xx-xx)
+~~~~~~~~~~~~~~~~
+* first release
+
+License
+=======
+MIT License
 """
 
 
@@ -58,7 +90,12 @@ setup(
     description=short_description,
     long_description=long_description,
     classifiers=classifiers,
-    keywords=['javascript', 'coffeescript', 'django', 'sub command'],
+    keywords=[
+        'javascript',
+        'coffeescript',
+        'django',
+        'command'
+    ],
     author='Tatsuo Ikeda',
     author_email='jp.ne.co.jp at gmail',
     url='https://github.com/ikeikeikeike/django-subcommand',
@@ -66,5 +103,10 @@ setup(
     packages=packages,
     data_files=data_files,
     py_modules=['subcommand'],
-    install_requires=['django', 'django-generate-scaffold']
+    install_requires=[
+        'django',
+        'django-generate-scaffold',
+        'django_compressor',
+        'inflection'
+    ]
 )

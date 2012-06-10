@@ -31,10 +31,7 @@ from .base import (
     # TemplateSubCommand
 )
 from subcommand.management.base import BaseVerboseCommand
-from ..utils import (
-    dictmap,
-    strext
-)
+from ..utils import strext
 
 
 class FileDestroy(object):
@@ -183,6 +180,12 @@ class GenerateMixin(object):
             reload_django_appcache()
         clean_pyc_in_dir(self.app_dir)
 
+    def _dictstrmap(self, func, dic):
+        assert isinstance(dic, dict)
+        dict_ = dict([(k, func(v)) for k, v in dic.items()
+                                            if isinstance(v, str)])
+        dic.update(dict_)
+
     def render_template(self, template, **options):
         c = {"package": self.package,
              "basecommand": self.basecommand,
@@ -193,9 +196,9 @@ class GenerateMixin(object):
              "app_dir": self.app_dir,
              "fields": map(lambda field: strext(field), self.fields),
              "template": template,
-             "options": dictmap(strext, options)
+             "options": self._dictstrmap(strext, options)
         }
-        dictmap(strext, c)
+        self._dictstrmap(strext, c)
 
         try:
             return get_template("{0}/{1}".format(self.package, template)).render(Context(c))

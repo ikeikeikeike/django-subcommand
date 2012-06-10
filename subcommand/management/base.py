@@ -2,6 +2,7 @@ import os
 import sys
 import collections
 
+#
 from django.utils import termcolors
 from django.core.management.color import supports_color
 from django.core.management import LaxOptionParser
@@ -13,8 +14,11 @@ from django.core.management.base import (
     LabelCommand,
     handle_default_options
 )
+
+#
 from generate_scaffold.management.verbosity import VerboseCommandMixin
 
+#
 from ..management import (
     get_subcommands,
     embedded_color,

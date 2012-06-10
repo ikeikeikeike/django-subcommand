@@ -1,4 +1,4 @@
-``add``
+``Add sub command to A Django manage command.``
 
 Description
 ===========
@@ -6,6 +6,9 @@ Description
 Requirements
 ============
 * django
+* django_compressor
+* inflection
+* django-generate-scaffold (optional)
 
 Features
 ========

@@ -4,13 +4,6 @@ import inflection
 regexconv = "|".join
 
 
-def dictmap(func, dic):
-    assert isinstance(dic, dict)
-    dict_ = dict([(k, func(v)) for k, v in dic.items()
-                                        if isinstance(v, str)])
-    dic.update(dict_)
-
-
 class strext(str):
 
     def __getattr__(self, name):
