@@ -3,7 +3,7 @@ from setuptools import setup
 
 version = '0.0.1'
 name = 'django-subcommand'
-short_description = ''
+short_description = 'Add sub command to A Django manage command'
 long_description = """\
 ``Add sub command to A Django manage command.``
 
