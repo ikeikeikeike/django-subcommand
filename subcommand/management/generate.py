@@ -7,7 +7,7 @@ import os
 from django.core.management.base import CommandError
 from django.template import Context
 from django.template.loader import get_template
-from django_spine import settings
+from django.conf import settings
 
 # external
 import inflection
