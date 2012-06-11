@@ -24,9 +24,19 @@ Features
 Setup
 =====
 
+::
+
+    $ pip install django-subcommand
+
 
 Installation
 ~~~~~~~~~~~~
+
+edit settings.py ::
+
+    INSTALLED_APPS = (
+        "subcommand",
+    )
 
 
 History
