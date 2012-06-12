@@ -83,23 +83,24 @@ for dirpath, dirnames, filenames in os.walk(extensions_dir):
         data_files.append([dirpath, [os.path.join(dirpath, f) for f in filenames]])
 
 
-classifiers = [
-   "Development Status :: 3 - Alpha",
-#   "Development Status :: 4 - Beta",
-   "Framework :: Django",
-   "Environment :: Web Environment",
-   "Intended Audience :: Developers",
-   "Programming Language :: Python",
-   'Topic :: Utilities',
-   'License :: OSI Approved :: MIT License',
-]
-
 setup(
     name=name,
     version=version,
     description=short_description,
     long_description=long_description,
-    classifiers=classifiers,
+    classifiers=[
+       "Development Status :: 3 - Alpha",
+    #   "Development Status :: 4 - Beta",
+       "Framework :: Django",
+       'Environment :: Console'
+       "Environment :: Web Environment",
+       "Intended Audience :: Developers",
+       'License :: OSI Approved :: MIT License',
+       "Programming Language :: Python :: 2.6",
+       "Programming Language :: Python :: 2.7",
+       'Topic :: Utilities',
+       'Topic :: Software Development :: Libraries :: Python Modules',
+    ],
     keywords=[
         'javascript',
         'coffeescript',
