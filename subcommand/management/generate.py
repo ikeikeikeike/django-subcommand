@@ -1,12 +1,17 @@
 from __future__ import with_statement
 from optparse import make_option
+import re
 import shutil
 import os
 
 from django.core.management.base import CommandError
 from django.template import Context
 from django.template.loader import get_template
-from django_spine import settings
+from django.conf import settings
+
+# external
+import inflection
+from subcommand.management.base import BaseVerboseCommand
 from generate_scaffold.management.transactions import (
     FilesystemTransaction,
     FileModification,
@@ -14,9 +19,6 @@ from generate_scaffold.management.transactions import (
     Filelike,
     DirectoryCreation
 )
-
-# external
-import inflection
 from generate_scaffold.utils.cacheclear import (
     reload_django_appcache,
     clean_pyc_in_dir
@@ -30,8 +32,9 @@ from .base import (
     # NoArgsSubCommand,
     # TemplateSubCommand
 )
-from subcommand.management.base import BaseVerboseCommand
 from ..utils import strext
+
+fields_ptn = re.compile("^-")
 
 
 class FileDestroy(object):
@@ -156,7 +159,6 @@ class GenerateMixin(object):
         self.nodes.append({"src": src, "template": False, "options": options})
 
     def create_file(self, src, **options):
-        # TODO: direct input data.
         self.nodes.append({"src": src, "template": "dummy", "options": options})
 
     def empty_package(self, src, **options):
@@ -225,8 +227,11 @@ class GenerateMixin(object):
         self.app_name = app_name
         self.app_module = app_module
         self.app_dir = app_module.__path__[0]
+        self.class_name = args[1] if len(args) > 1 else ""
+        self.fields = [arg for arg in args[2:] if not fields_ptn.match(arg)] if len(args) > 2 else ""
         self.destroy = self.basecommand == "destroy"
 
+        # handle
         self._handle_generate(*args, **options)
         exit()
 
