@@ -32,9 +32,10 @@ class Staticfinder(object):
 
 class Tags(Node):
 
-    def __init__(self, apps=list(), url_root=None, finder=None):
+    def __init__(self, apps=list(), directory=None, url_root=None, finder=None):
         assert isinstance(apps, list), "Error: please input a list type"
         self.finder = finder or Staticfinder(apps=apps)
+        self.directory = directory
         self.url_root = url_root or settings.STATIC_URL
 
     def join(self, src):
@@ -49,9 +50,12 @@ class Tags(Node):
             return ext
 
     def render(self, context):
+        dir_ptn = re.compile(self.directory or "")
         output = []
         for s in self.finder.get_scriptfiles():
-            if script_ptn.search(s):
+            if not dir_ptn.search(s):
+                continue
+            elif script_ptn.search(s):
                 output.append(self.script_tag(self.join(s), self._ext_type(s.split(".")[-1])))
             elif style_ptn.search(s):
                 output.append(self.style_tag(self.join(s), self._ext_type(s.split(".")[-1])))
@@ -67,7 +71,10 @@ class Tags(Node):
 
 
 def do_generate(parser, token=list()):
-    return Tags(token.contents.split()[1:])
+    args = token.contents.split()
+    assert len(args) > 1, "Error: arg length"
+    app, directory = args[1], args[2] if len(args) > 2 else None
+    return Tags([app], directory)
 
 
 register.tag('generate', do_generate)

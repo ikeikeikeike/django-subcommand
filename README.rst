@@ -18,6 +18,8 @@ Features
 Setup
 =====
 
+.. highlight:: bash
+
 ::
 
     $ pip install django-subcommand
@@ -25,6 +27,8 @@ Setup
 
 Installation
 ~~~~~~~~~~~~
+
+.. highlight:: python
 
 edit settings.py ::
 
