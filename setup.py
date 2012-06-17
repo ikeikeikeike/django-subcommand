@@ -4,51 +4,7 @@ from setuptools import setup
 version = '0.0.1'
 name = 'django-subcommand'
 short_description = 'Add sub command to A Django manage command'
-long_description = """\
-``Add sub command to A Django manage command.``
-
-Description
-===========
-
-Requirements
-============
-* django
-* django_compressor
-* inflection
-* django-generate-scaffold (optional)
-
-Features
-========
-
-
-Setup
-=====
-
-::
-
-    $ pip install django-subcommand
-
-
-Installation
-~~~~~~~~~~~~
-
-edit settings.py ::
-
-    INSTALLED_APPS = (
-        "subcommand",
-    )
-
-
-History
-========
-0.x (2012-xx-xx)
-~~~~~~~~~~~~~~~~
-* first release
-
-License
-=======
-MIT License
-"""
+long_description = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 
 
 def fullsplit(path, result=None):
