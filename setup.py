@@ -1,7 +1,7 @@
 import os
 from setuptools import setup
 
-version = '0.0.1'
+version = '0.0.2'
 name = 'django-subcommand'
 short_description = 'Add sub command to A Django manage command'
 long_description = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
@@ -71,9 +71,7 @@ setup(
     data_files=data_files,
     py_modules=['subcommand'],
     install_requires=[
-        'django',
+        'inflection',
         'django-generate-scaffold',
-        'django_compressor',
-        'inflection'
     ]
 )

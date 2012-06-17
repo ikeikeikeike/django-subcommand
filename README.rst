@@ -1,28 +1,7 @@
-``Add sub command to A Django manage command.``
 
-Description
-===========
+Django Subcommand
+==================
 Add sub command to A Django manage command.
-
-Requirements
-============
-* django
-* django_compressor
-* inflection
-* django-generate-scaffold (optional)
-
-Features
-========
-
-
-Setup
-=====
-
-.. highlight:: bash
-
-::
-
-    $ pip install django-subcommand
 
 
 Installation
@@ -36,13 +15,26 @@ edit settings.py ::
         "subcommand",
     )
 
+Setup
+=====
+
+.. highlight:: bash
+
+::
+
+    $ pip install django-subcommand
+
 
 History
 ========
-0.x (2012-xx-xx)
-~~~~~~~~~~~~~~~~
-* first release
+0.0.1 (2012-06-16)
+~~~~~~~~~~~~~~~~~~~
+* Alpha
+
+0.0.2 (2012-06-17)
+~~~~~~~~~~~~~~~~~~~
+* Remove the django_compressor package.
 
 License
-=======
+========
 MIT License
