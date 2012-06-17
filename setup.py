@@ -48,7 +48,7 @@ setup(
        "Development Status :: 3 - Alpha",
     #   "Development Status :: 4 - Beta",
        "Framework :: Django",
-       'Environment :: Console'
+       'Environment :: Console',
        "Environment :: Web Environment",
        "Intended Audience :: Developers",
        'License :: OSI Approved :: MIT License',
@@ -68,6 +68,7 @@ setup(
     url='https://github.com/ikeikeikeike/django-subcommand',
     license='MIT License',
     packages=find_packages(),
+    include_package_data=True,
     data_files=data_files,
     install_requires=[
         'inflection',
