@@ -1,5 +1,5 @@
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 
 version = '0.0.2'
 name = 'django-subcommand'
@@ -67,9 +67,8 @@ setup(
     author_email='jp.ne.co.jp at gmail',
     url='https://github.com/ikeikeikeike/django-subcommand',
     license='MIT License',
-    packages=packages,
+    packages=find_packages(),
     data_files=data_files,
-    py_modules=['subcommand'],
     install_requires=[
         'inflection',
         'django-generate-scaffold',
