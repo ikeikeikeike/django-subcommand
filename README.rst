@@ -7,33 +7,37 @@ Add sub command to A Django manage command.
 Installation
 ~~~~~~~~~~~~
 
-.. highlight:: python
-
-edit settings.py ::
+Edit settings.py ::
 
     INSTALLED_APPS = (
         "subcommand",
     )
 
+Usage
+======
+
+Generating the below command.
+
+::
+
+    $ python manage.py generate -h
+
+    $ python manage.py destroy -h
+
+
+Examples
+=========
+
+For more information, please see the `Example <https://github.com/ikeikeikeike/django-subcommand/tree/master/examples>`_
+
+
 Setup
 =====
-
-.. highlight:: bash
 
 ::
 
     $ pip install django-subcommand
 
-
-History
-========
-0.0.1 (2012-06-16)
-~~~~~~~~~~~~~~~~~~~
-* Alpha
-
-0.0.2 (2012-06-17)
-~~~~~~~~~~~~~~~~~~~
-* Remove the django_compressor package.
 
 License
 ========
