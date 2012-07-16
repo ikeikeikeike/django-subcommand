@@ -30,6 +30,13 @@ Template Methods :
 
    template
 
+Change History :
+
+.. toctree::
+   :maxdepth: 5
+
+   HISTORY
+
 Indices and tables
 ==================
 
