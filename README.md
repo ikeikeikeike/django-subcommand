@@ -1,9 +1,7 @@
 
-
 Django Subcommand
 ==================
 Add sub command to the Django manage command.
-
 
 Installation
 =============
@@ -22,18 +20,13 @@ Usage
 Generating the below command.
 
 ```bash
-$ python manage.py generate -h
-```
-
-```bash
-$ python manage.py destroy -h
+$ python manage.py startsubcommand APP_NAME SUBCOMMAND_NAME
 ```
 
 Examples
 =========
 
 For more information, please see the [Example](https://github.com/ikeikeikeike/django-subcommand/tree/master/examples)
-
 
 Setup
 =====

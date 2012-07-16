@@ -72,3 +72,4 @@ lib/vetags/lang/scala/sources
 lib/vetags/lang/clojure/helloworld
 
 django_subcommand.egg-info
+.tox

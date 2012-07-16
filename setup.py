@@ -1,7 +1,7 @@
 import os
 from setuptools import setup, find_packages
 
-version = '0.0.2'
+version = '0.3.2'
 name = 'django-subcommand'
 short_description = 'Add sub command to A Django manage command'
 long_description = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
@@ -27,6 +27,7 @@ root_dir = os.path.dirname(__file__)
 if root_dir != '':
     os.chdir(root_dir)
 extensions_dir = 'subcommand'
+
 
 for dirpath, dirnames, filenames in os.walk(extensions_dir):
     # Ignore dirnames that start with '.'
@@ -67,9 +68,9 @@ setup(
     author_email='jp.ne.co.jp at gmail',
     url='https://github.com/ikeikeikeike/django-subcommand',
     license='MIT License',
-    packages=find_packages(),
-    include_package_data=True,
-    data_files=data_files,
+    packages=packages,
+    # include_package_data=True,
+    # data_files=data_files,
     install_requires=[
         'inflection',
         'django-generate-scaffold',

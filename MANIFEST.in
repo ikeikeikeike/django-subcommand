@@ -1,3 +1,7 @@
 include LICENSE
-#recursive-include examples *
-recursive-include subcommand *
+include tox.ini
+include HISTORY.rst
+include README-ja.rst
+include README.md
+# recursive-include examples *
+# recursive-include subcommand *

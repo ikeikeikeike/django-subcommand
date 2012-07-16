@@ -229,6 +229,7 @@ class GenerateMixin(object):
         self.app_dir = app_module.__path__[0]
         self.class_name = args[1] if len(args) > 1 else ""
         self.fields = [arg for arg in args[2:] if not fields_ptn.match(arg)] if len(args) > 2 else ""
+        self.package_dir = os.path.abspath(os.path.dirname(__import__(__package__).__file__))
         self.destroy = self.basecommand == "destroy"
 
         # handle
