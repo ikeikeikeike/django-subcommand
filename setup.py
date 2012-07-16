@@ -1,5 +1,5 @@
 import os
-from setuptools import setup, find_packages
+from setuptools import setup
 
 version = '0.3.2'
 name = 'django-subcommand'
@@ -34,10 +34,7 @@ for dirpath, dirnames, filenames in os.walk(extensions_dir):
     for i, dirname in enumerate(dirnames):
         if dirname.startswith('.'):
             del dirnames[i]
-    if '__init__.py' in filenames:
-        packages.append('.'.join(fullsplit(dirpath)))
-    elif filenames:
-        data_files.append([dirpath, [os.path.join(dirpath, f) for f in filenames]])
+    packages.append('.'.join(fullsplit(dirpath)))
 
 
 setup(
