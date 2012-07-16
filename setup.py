@@ -46,8 +46,8 @@ setup(
     description=short_description,
     long_description=long_description,
     classifiers=[
-       "Development Status :: 3 - Alpha",
-    #   "Development Status :: 4 - Beta",
+#       "Development Status :: 3 - Alpha",
+       "Development Status :: 4 - Beta",
        "Framework :: Django",
        'Environment :: Console',
        "Environment :: Web Environment",
