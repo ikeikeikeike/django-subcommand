@@ -32,6 +32,11 @@ Setup
 
     $ pip install django-subcommand
 
+Documentation
+=============
+
+`django-subcommand.rtfd.org <http://django-subcommand.rtfd.org>`_
+
 License
 ========
 MIT License
