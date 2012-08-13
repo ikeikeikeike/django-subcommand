@@ -1,3 +1,3 @@
 [submodule "examples/django_spine"]
-	path = examples/django_spine
-	url = git@github.com:ikeikeikeike/django-spine.git
+  path = examples/django_spine
+    url = git://github.com/ikeikeikeike/django-spine.git
